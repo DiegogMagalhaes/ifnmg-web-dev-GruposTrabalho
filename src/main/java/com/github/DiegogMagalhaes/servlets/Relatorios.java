@@ -27,22 +27,34 @@ public class Relatorios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	
+    	System.out.println("Entrou aqui");
+    	
     	 try (PrintWriter out = response.getWriter()) {
              out.println("<!DOCTYPE html>");
              out.println("<html>");
              out.println("<head>");
-             out.println("<title>Servlet PessoaServlet</title>");
+             out.println("<title>Relatorio</title>");
              out.println("</head>");
              out.println("<body>");
-             out.println("<h1>Servlet PessoaServlet: Muitos-para-muitos com entidade de relacionamento</h1>");
-             out.println("<p>Processamento concluído com sucesso.</p>");
-             out.println("<p><pre>"
-//                     + Util.toJson(pessoa1Bd)
-                     + "</pre></p>");
-             out.println("<p><pre>"
-//                     + Util.toJson(pessoa2Bd)
-                     + "</pre></p>");
-             out.println("<a href=\"index.html\">Voltar</a>");
+             out.println("<h2>Pessoas Cadastradas - Query</h2>");
+             out.println("<h2>Pessoas Cadastradas - TypedQuery</h2>");
+             out.println("<h2>Pessoas Cadastradas - NamedQuery</h2>");
+             out.println("<h2>Nome das Pessoas - Query</h2>");
+             out.println("<h2>Nome das Pessoas - TypedQuery</h2>");
+             out.println("<h2>Nome das Pessoas - NamedQuery</h2>");
+             out.println("<h2>Nome e Endereço das Pessoas - Query</h2>");
+             out.println("<h2>Nome e Endereço das Pessoas - TypedQuery</h2>");
+             out.println("<h2>Nome e Endereço das Pessoas - NamedQuery</h2>");
+             out.println("<h2>Pessoas que moram em Avenidas - Query</h2>");
+             out.println("<h2>Pessoas que moram em Avenidas - TypedQuery</h2>");
+             out.println("<h2>Pessoas que moram em Avenidas - NamedQuery</h2>");
+             out.println("<h2>Pessoas que não moram em Praças - Query</h2>");
+             out.println("<h2>Pessoas que não moram em Praças - TypedQuery</h2>");
+             out.println("<h2>Pessoas que não moram em Praças - NamedQuery</h2>");
+             out.println("<h2>Nomes e Telefones das Pessoas - Query</h2>");
+             out.println("<h2>Nomes e Telefones das Pessoas - TypedQuery</h2>");
+             out.println("<h2>Nomes e Telefones das Pessoas - NamedQuery</h2>");
+             
              out.println("</body>");
              out.println("</html>");
          }catch (Exception e) {
@@ -55,7 +67,7 @@ public class Relatorios extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request, response);
 	}
 
 	/**
@@ -63,7 +75,7 @@ public class Relatorios extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		processRequest(request, response);
 	}
 
 }
