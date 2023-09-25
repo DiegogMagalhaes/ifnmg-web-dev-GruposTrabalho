@@ -37,9 +37,6 @@ import javax.persistence.Transient;
 	@NamedQuery(
 	name =  "Pessoa.findAllDiffPraca",
 	query = "Select p FROM Pessoa p WHERE p.endereco.tipoLogradouro != 3"),
-	@NamedQuery(
-	name =  "Pessoa.findAllNomeTelefone",
-	query = "SELECT p.nome, p.telefone FROM Pessoa p"),
 })
 
 @Table(name = "Pessoa")

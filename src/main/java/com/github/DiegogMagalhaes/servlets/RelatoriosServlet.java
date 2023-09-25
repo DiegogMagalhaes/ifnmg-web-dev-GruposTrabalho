@@ -119,23 +119,7 @@ public class RelatoriosServlet extends HttpServlet {
              out.println("<pre class=\"high\">"
              + Util.toJson(realatBean.selectAllPessaoDiffPracaNamedQuery())
       		+ "</pre>"
-     		 );
-             out.println("<h2>Nomes e Telefones das Pessoas - Query</h2>");
-             out.println("<pre class=\"high\">"
-             		+ Util.toJson(realatBean.selectAllPessoaNomeTelefoneQuery())
-             		+ "</pre>"
-            		 );
-             out.println("<h2>Nomes e Telefones das Pessoas - TypedQuery</h2>");
-             out.println("<pre class=\"high\">"
-             		+ Util.toJson(realatBean.selectAllPessoaNomeTelefoneTypedQuery())
-             		+ "</pre>"
-            		 );
-             out.println("<h2>Nomes e Telefones das Pessoas - NamedQuery</h2>");
-             out.println("<pre class=\"high\">"
-             		+ Util.toJson(realatBean.selectAllPessoaNomeTelefoneNamedQuery())
-             		+ "</pre>"
-            		 );
-             
+     		 );   
              out.println("</body>");
              out.println("</html>");
          }catch (Exception e) {

@@ -90,20 +90,5 @@ public class RelatorioBean {
 		return em.createNamedQuery("Pessoa.findAllDiffPraca").getResultList();
 		
 	}
-	
 
-	public List<Pessoa> selectAllPessoaNomeTelefoneQuery(){
-		Query q = em.createQuery("Select p.nome, p.tefone FROM Pessoa p");
-		return q.getResultList();
-	}
-	
-	public List<Object[]> selectAllPessoaNomeTelefoneTypedQuery(){
-		TypedQuery q = em.createQuery("Select p.nome, p.telefone FROM Pessoa p", Object[].class);
-		return q.getResultList();
-	}
-	
-	public List<Object[]> selectAllPessoaNomeTelefoneNamedQuery(){
-		return em.createNamedQuery("Pessoa.findAllNomeTelefone", Object[].class).getResultList();
-	}
-	
 }
