@@ -91,14 +91,50 @@ public class RelatoriosServlet extends HttpServlet {
                 		+ "</pre>"
                		 );
              out.println("<h2>Pessoas que moram em Avenidas - Query</h2>");
+             out.println("<pre class=\"high\">"
+             		+ Util.toJson(realatBean.selectAllPessaoByAvenidaQuery())
+             		+ "</pre>"
+            		 );
              out.println("<h2>Pessoas que moram em Avenidas - TypedQuery</h2>");
+             out.println("<pre class=\"high\">"
+             		+ Util.toJson(realatBean.selectAllPessaoByAvenidaTypedQuery())
+             		+ "</pre>"
+            		 );
              out.println("<h2>Pessoas que moram em Avenidas - NamedQuery</h2>");
+             out.println("<pre class=\"high\">"
+             		+ Util.toJson(realatBean.selectAllPessaoByAvenidaNamedQuery())
+             		+ "</pre>"
+            		 );
              out.println("<h2>Pessoas que não moram em Praças - Query</h2>");
+             out.println("<pre class=\"high\">"
+             + Util.toJson(realatBean.selectAllPessaoDiffPracaQuery())
+      		+ "</pre>"
+     		 );
              out.println("<h2>Pessoas que não moram em Praças - TypedQuery</h2>");
+             out.println("<pre class=\"high\">"
+             + Util.toJson(realatBean.selectAllPessaoDiffPracaTypedQuery())
+      		+ "</pre>"
+     		 );
              out.println("<h2>Pessoas que não moram em Praças - NamedQuery</h2>");
+             out.println("<pre class=\"high\">"
+             + Util.toJson(realatBean.selectAllPessaoDiffPracaNamedQuery())
+      		+ "</pre>"
+     		 );
              out.println("<h2>Nomes e Telefones das Pessoas - Query</h2>");
+             out.println("<pre class=\"high\">"
+             		+ Util.toJson(realatBean.selectAllPessoaNomeTelefoneQuery())
+             		+ "</pre>"
+            		 );
              out.println("<h2>Nomes e Telefones das Pessoas - TypedQuery</h2>");
+             out.println("<pre class=\"high\">"
+             		+ Util.toJson(realatBean.selectAllPessoaNomeTelefoneTypedQuery())
+             		+ "</pre>"
+            		 );
              out.println("<h2>Nomes e Telefones das Pessoas - NamedQuery</h2>");
+             out.println("<pre class=\"high\">"
+             		+ Util.toJson(realatBean.selectAllPessoaNomeTelefoneNamedQuery())
+             		+ "</pre>"
+            		 );
              
              out.println("</body>");
              out.println("</html>");
