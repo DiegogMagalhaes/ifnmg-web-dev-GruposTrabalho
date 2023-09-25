@@ -1,7 +1,10 @@
 package com.github.DiegogMagalhaes.modelo;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,10 +20,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Endereco")
-public class Endereco {
+public class Endereco implements Serializable{
+
+	private static final long serialVersionUID = -5020249205854786281L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@Enumerated(EnumType.ORDINAL)
@@ -83,6 +88,29 @@ public class Endereco {
 
 	public void setPessoas(List<Pessoa> pessoas) {
 		this.pessoas = pessoas;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Endereco other = (Endereco) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Endereco [id=" + id + ", tipoLogradouro=" + tipoLogradouro + ", logradouro=" + logradouro + ", numero="
+				+ numero + ", bairro=" + bairro + ", pessoas=" + pessoas + "]";
 	}
 	
 	
